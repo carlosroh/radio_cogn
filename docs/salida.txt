@@ -1,0 +1,379 @@
+
+Numero de enlaces secundarios: 10
+Numero de enlaces primarios: 1
+SINRL en dB's: 14.000000
+SINRL en unidades lineales: 25.118864
+Total particulas: 40
+Total iteraciones: 120
+
+
+ ** Matriz de coordenadas de SU's ** 
+
+2580,4621,3345,4070,
+3113,3935,3002,4191,
+1282,518,2167,361,
+805,965,170,1012,
+4946,2749,4913,2654,
+1080,736,807,7,
+128,249,680,356,
+3370,4325,3946,4897,
+2739,3518,3366,4063,
+2312,2075,1797,2168,
+
+ ** Matriz de coordenadas de PU's **
+
+3500,2500,2500,2500,
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: 10 
+
+
+
+Indice de global: 10 
+
+ ** Enlaces seleccionados ** 
+Enlace 4, 
+
+Maxima tasa de datos (Mbps): 297.9731
+
+
+** Estado del espectro **
+1, 
+
+
+** Vector de SU's (Asignacion de canales a los SU's) ***
+0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 
+
+
+** Vector del SIR de enlaces primarios (dB)**
+14.3688, 
+
+
+** Vector del SIR de enlaces secundarios (dB)**
+4:30.3206, 
+
+
+R 10,297.9731
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: 20 
+
+
+
+Indice de global: 10 
+
+ ** Enlaces seleccionados ** 
+Enlace 4, 
+
+Maxima tasa de datos (Mbps): 297.9731
+
+
+** Estado del espectro **
+1, 
+
+
+** Vector de SU's (Asignacion de canales a los SU's) ***
+0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 
+
+
+** Vector del SIR de enlaces primarios (dB)**
+14.3688, 
+
+
+** Vector del SIR de enlaces secundarios (dB)**
+4:30.3206, 
+
+
+R 20,297.9731
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: 30 
+
+
+
+Indice de global: 10 
+
+ ** Enlaces seleccionados ** 
+Enlace 4, 
+
+Maxima tasa de datos (Mbps): 297.9731
+
+
+** Estado del espectro **
+1, 
+
+
+** Vector de SU's (Asignacion de canales a los SU's) ***
+0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 
+
+
+** Vector del SIR de enlaces primarios (dB)**
+14.3688, 
+
+
+** Vector del SIR de enlaces secundarios (dB)**
+4:30.3206, 
+
+
+R 30,297.9731
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: 40 
+
+
+
+Indice de global: 31 
+
+ ** Enlaces seleccionados ** 
+Enlace 7, 
+
+Maxima tasa de datos (Mbps): 349.4483
+
+
+** Estado del espectro **
+1, 
+
+
+** Vector de SU's (Asignacion de canales a los SU's) ***
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+
+
+** Vector del SIR de enlaces primarios (dB)**
+20.5823, 
+
+
+** Vector del SIR de enlaces secundarios (dB)**
+7:31.9743, 
+
+
+R 40,349.4483
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: 50 
+
+
+
+Indice de global: 31 
+
+ ** Enlaces seleccionados ** 
+Enlace 7, 
+
+Maxima tasa de datos (Mbps): 349.4483
+
+
+** Estado del espectro **
+1, 
+
+
+** Vector de SU's (Asignacion de canales a los SU's) ***
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+
+
+** Vector del SIR de enlaces primarios (dB)**
+20.5823, 
+
+
+** Vector del SIR de enlaces secundarios (dB)**
+7:31.9743, 
+
+
+R 50,349.4483
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: 60 
+
+
+
+Indice de global: 31 
+
+ ** Enlaces seleccionados ** 
+Enlace 7, 
+
+Maxima tasa de datos (Mbps): 349.4483
+
+
+** Estado del espectro **
+1, 
+
+
+** Vector de SU's (Asignacion de canales a los SU's) ***
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+
+
+** Vector del SIR de enlaces primarios (dB)**
+20.5823, 
+
+
+** Vector del SIR de enlaces secundarios (dB)**
+7:31.9743, 
+
+
+R 60,349.4483
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: 70 
+
+
+
+Indice de global: 31 
+
+ ** Enlaces seleccionados ** 
+Enlace 7, 
+
+Maxima tasa de datos (Mbps): 349.4483
+
+
+** Estado del espectro **
+1, 
+
+
+** Vector de SU's (Asignacion de canales a los SU's) ***
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+
+
+** Vector del SIR de enlaces primarios (dB)**
+20.5823, 
+
+
+** Vector del SIR de enlaces secundarios (dB)**
+7:31.9743, 
+
+
+R 70,349.4483
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: 80 
+
+
+
+Indice de global: 31 
+
+ ** Enlaces seleccionados ** 
+Enlace 7, 
+
+Maxima tasa de datos (Mbps): 349.4483
+
+
+** Estado del espectro **
+1, 
+
+
+** Vector de SU's (Asignacion de canales a los SU's) ***
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+
+
+** Vector del SIR de enlaces primarios (dB)**
+20.5823, 
+
+
+** Vector del SIR de enlaces secundarios (dB)**
+7:31.9743, 
+
+
+R 80,349.4483
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: 90 
+
+
+
+Indice de global: 31 
+
+ ** Enlaces seleccionados ** 
+Enlace 7, 
+
+Maxima tasa de datos (Mbps): 349.4483
+
+
+** Estado del espectro **
+1, 
+
+
+** Vector de SU's (Asignacion de canales a los SU's) ***
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+
+
+** Vector del SIR de enlaces primarios (dB)**
+20.5823, 
+
+
+** Vector del SIR de enlaces secundarios (dB)**
+7:31.9743, 
+
+
+R 90,349.4483
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: 100 
+
+
+
+Indice de global: 31 
+
+ ** Enlaces seleccionados ** 
+Enlace 7, 
+
+Maxima tasa de datos (Mbps): 349.4483
+
+
+** Estado del espectro **
+1, 
+
+
+** Vector de SU's (Asignacion de canales a los SU's) ***
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+
+
+** Vector del SIR de enlaces primarios (dB)**
+20.5823, 
+
+
+** Vector del SIR de enlaces secundarios (dB)**
+7:31.9743, 
+
+
+R 100,349.4483
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: 110 
+
+
+
+Indice de global: 31 
+
+ ** Enlaces seleccionados ** 
+Enlace 7, 
+
+Maxima tasa de datos (Mbps): 349.4483
+
+
+** Estado del espectro **
+1, 
+
+
+** Vector de SU's (Asignacion de canales a los SU's) ***
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+
+
+** Vector del SIR de enlaces primarios (dB)**
+20.5823, 
+
+
+** Vector del SIR de enlaces secundarios (dB)**
+7:31.9743, 
+
+
+R 110,349.4483
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: 120 
+
+
+
+Indice de global: 31 
+
+ ** Enlaces seleccionados ** 
+Enlace 7, 
+
+Maxima tasa de datos (Mbps): 349.4483
+
+
+** Estado del espectro **
+1, 
+
+
+** Vector de SU's (Asignacion de canales a los SU's) ***
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+
+
+** Vector del SIR de enlaces primarios (dB)**
+20.5823, 
+
+
+** Vector del SIR de enlaces secundarios (dB)**
+7:31.9743, 
+
+
+R 120,349.4483
+IT 32,349.4483
+EXITO 1
+OUTAGE 0.9577
+RR 349.4483,*7 *1 *7:31.9743, *20.5823, *1, *0, 0, 0, 0, 0, 0, 1, 0, 0, 0, * 1137.793385989919

@@ -1,0 +1,38 @@
+Numero de enlaces primarios: 1
+Numero de enlaces secundarios: 2
+SINRL en dB's: 10.000000
+SINRL en unidades lineales: 0.000000
+Total particulas: 3
+Total iteraciones: 1
+
+ ** Matriz de coordenadas de SU's **
+	1711, 641, 2411, 314
+	1679, 3918, 1774, 3668
+
+ ** Matriz de coordenadas de PU's **
+	3500, 2500, 2500, 2500
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: 1
+
+Indice de global: 0
+
+ ** Enlaces seleccionados ** 
+Enlace 0, Enlace 1, 
+
+Maxima tasa de datos (Mbps): 0.000000
+
+ ** Estado del espectro **
+0, 
+
+ ** Vector de SU's (Asignacion de canales a los SU's) **
+0, 0, 
+
+ ** Vector del SIR de enlaces primarios (dB)**
+7.014622, 
+
+ ** Vector del SIR de enlaces secundarios (dB)**
+19.221224, 34.787655, 
+
+R 1, 4209078
+
+
