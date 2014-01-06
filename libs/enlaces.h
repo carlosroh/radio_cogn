@@ -39,4 +39,4 @@ float fitness(float *, int *, float *, int, float *, int *, float *, int);
 void datos_iniciales(char *, int, int, float, float, int);
 void guarda_coordenadas(char *, enlace *, int, enlace *, int);
 void marcas(char *, int, int, bool *, float, int *, float *, int, float *, int, enlace *, float);
-void marcas_finales(char *);
+void marcas_finales(char *, int, float);

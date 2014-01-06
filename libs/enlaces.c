@@ -73,7 +73,7 @@ void sinr_enlace_primario(enlace *enlaces_primarios, int total_canales, bool *es
 
       printf("total interferentes: %d\n", dispositivos_interferentes);
       if(dispositivos_interferentes == 0){
-        dss = 0.0;
+        dss = 1.0;
       }
       
       printf("Sumatoria de las distancias SUs: %f\n", dss);
@@ -84,7 +84,7 @@ void sinr_enlace_primario(enlace *enlaces_primarios, int total_canales, bool *es
 
       sinr = pow(P / dps, 4) / dss;
       sinr_pu[i] = sinr;
-      printf("SINR: %f\n\n", sinr);
+      printf("SINR: %f watts\n\n", sinr);
     } else { 
       printf("No esta transmitiendo.\n\n");
       sinr_pu[i] = 0.0;
@@ -254,7 +254,10 @@ void imprime_enlace(enlace *link){
 }
 
 float watt_a_dB(float watt){
-  return 10*log10(watt);
+  if(watt > 0.0)
+    return 10*log10(1000*watt);
+  else
+    return 0.0;
 }
 
 // Regresa true si todos los enlaces se comunican sin problema,
@@ -287,18 +290,23 @@ float fitness(float *sinr_pu, int *evaluacion_pu, float *aptitud_pu, int total_p
     return 0.0;
   }
 
-  int i;
+  int i; printf("\nfitness: ");
   for(i = 0; i < total_pu; i++){
     aptitud_pu[i] = tasa_de_transferencia(sinr_pu[i]);
+    printf(" %f + ", aptitud_pu[i]);
     fitness += aptitud_pu[i];
   }
+  printf("= %f", fitness);
 
+  printf("\nfitness: ");
   for(i = 0; i < total_su; i++){
-  /*  aptitud_su[i] = tasa_de_transferencia(sinr_su[i]);
-    fitness += aptitud_su[i]; */
+    aptitud_su[i] = tasa_de_transferencia(sinr_su[i]);
+    printf(" %f + ", aptitud_pu[i]);
+    fitness += aptitud_su[i];
   }
-  
-  printf("fitness corrida: %f\n", fitness);
+  printf("= %f", fitness);
+
+  printf("\nfitness corrida: %f\n", fitness);
   return fitness;
 }
 
@@ -352,75 +360,84 @@ void marcas(char *nombre, int iteraciones, int global, bool *estados_su, float m
   // a+ es para que agrege contenido al final del archivo
   archivo = fopen(nombre, "a+");
   fprintf(archivo, "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: %d\n", iteraciones);
-  printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: %d\n", iteraciones);
+            printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Iteraciones: %d\n", iteraciones);
 
   // Individuo que tiene la solucion
   fprintf(archivo, "\nIndice de global: %d\n", global);
-  printf("\nIndice de global: %d\n", global);
+            printf("\nIndice de global: %d\n", global);
 
   // Enlaces secundarios seleccionados por el individuo anterior
   fprintf(archivo, "\n ** Enlaces seleccionados ** \n");
-  printf("\n ** Enlaces seleccionados ** \n");
+            printf("\n ** Enlaces seleccionados ** \n");
   
   int i;
   for(i = 0; i < su_total; i++){
     if(estados_su[i] == true){
       fprintf(archivo, "Enlace %d, ", i);
-      printf("Enlace %d, ", i);
+                printf("Enlace %d, ", i);
     }
   }
 
 
   // Maxima taza de datos que obtuvo el individuo
   fprintf(archivo, "\n\nMaxima tasa de datos (Mbps): %f\n", max_taza_datos);
-  printf("\n\nMaxima tasa de datos (Mbps): %f\n", max_taza_datos);
+            printf("\n\nMaxima tasa de datos (Mbps): %f\n", max_taza_datos);
 
   // Vector de estado del espectro (canal[usuario])
   fprintf(archivo, "\n ** Estado del espectro **\n");
-  printf("\n ** Estado del espectro **\n");
+            printf("\n ** Estado del espectro **\n");
   
-  for(i = 0; i < pu_total; i++)
+  for(i = 0; i < pu_total; i++){
+              printf("%d, ", estado_del_espectro[i]);
     fprintf(archivo, "%d, ", estado_del_espectro[i]);
+  }
 
 
   // Asignacion de canales de los SUs
   fprintf(archivo, "\n\n ** Vector de SU's (Asignacion de canales a los SU's) **\n");
-  printf("\n\n ** Vector de SU's (Asignacion de canales a los SU's) **\n");
+            printf("\n\n ** Vector de SU's (Asignacion de canales a los SU's) **\n");
   
-  for(i = 0; i < su_total; i++)
+  for(i = 0; i < su_total; i++){
+              printf("%d, ", su_grupo[i].canal);
     fprintf(archivo, "%d, ", su_grupo[i].canal);
+  }
 
   // SINR enlaces
-  fprintf(archivo, "\n\n ** Vector del SIR de enlaces primarios (dB)**\n");
-  printf("\n\n ** Vector del SIR de enlaces primarios (dB)**\n");
+  fprintf(archivo, "\n\n ** Vector del SIR de enlaces primarios **\n");
+            printf("\n\n ** Vector del SIR de enlaces primarios (dB)**\n");
   
-  for(i = 0; i < pu_total; i++)
-    fprintf(archivo, "%f, ", watt_a_dB(sinr_pu[i]));
+  for(i = 0; i < pu_total; i++){
+              printf("%f, ", watt_a_dB(sinr_pu[i]));
+    fprintf(archivo, "%f, ", sinr_pu[i]);
+  }
 
 
-  fprintf(archivo, "\n\n ** Vector del SIR de enlaces secundarios (dB)**\n");
-  printf("\n\n ** Vector del SIR de enlaces secundarios (dB)**\n");
-  for(i = 0; i < su_total; i++)
-    fprintf(archivo, "%f, ", watt_a_dB(sinr_su[i]));
+  fprintf(archivo, "\n\n ** Vector del SIR de enlaces secundarios **\n");
+            printf("\n\n ** Vector del SIR de enlaces secundarios (dB)**\n");
+            
+  for(i = 0; i < su_total; i++){
+              printf("%f, ", watt_a_dB(sinr_su[i]));
+    fprintf(archivo, "%f, ", sinr_su[i]);
+  }
 
   // R PARA MARCAR LA ITERACCION, FITNESS EN ESA ITERACION
   fprintf(archivo, "\n\nR %d, %d\n\n\n", iteraciones, fitness);
-  printf("\n\nR %d, %d\n\n\n", iteraciones, fitness);
+            printf("\n\nR %d, %d\n\n\n", iteraciones, fitness);
   fclose(archivo);
 }
 
-void marcas_finales(char *nombre){
+void marcas_finales(char *nombre, int ultimo_cambio, float global){
   FILE *archivo;
   archivo = fopen(nombre, "a+");
   
   // IT MARCA ITERACION EN QUE YA NO HUBO CAMBIO DE LA SOLUCION, FITNESS
-  fprintf(archivo, "IT");
+  fprintf(archivo, "IT %d, %f\n", ultimo_cambio, global);
   
   //OUTAGE MARCA LA RELACION ENTRE SOLUCIONES VALIDAS/SOLUCIONES NO VALIDAS
-  fprintf(archivo, "OUTAGE");
+  fprintf(archivo, "OUTAGE\n");
   
   // RR PARA MARCAR RESULTADO DE LA CORRIDA* FITNESS*ENLACES SECUNDARIOS SELECCIONADOS* TOTAL DE ENLACES SECUNDARIOS SELECCIONADOS* RELACION SEÑAL A INTERFERENCIA DE SECUNDARIOS* RELACION SEÑAL A INTERFERENCIA DE PRIMARIOS* ASIGNACION DE CANALES PARA ENLACES SECUNDARIOS* TIEMPO DE EJECUCION DE LA CORRIDA EN MILISEGUNDOS (PUEDES MANEJARLA EN SEGUNDOS)
-  fprintf(archivo, "RR");
+  fprintf(archivo, "RR\n");
   fclose(archivo);
 }
 

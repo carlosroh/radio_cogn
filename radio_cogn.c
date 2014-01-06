@@ -10,8 +10,8 @@ float calculos(){
 
   /**  El problema nos limita a maximo 10  *
    *   usuarios primarios                  */
-  int pu_total = 1;
-  int su_total = 2;
+  int pu_total = 10;
+  int su_total = 5;
 
   enlace pu_grupo[pu_total];
   enlace su_grupo[su_total];
