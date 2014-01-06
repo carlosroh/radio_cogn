@@ -85,7 +85,9 @@ void main(){
 	} while(generacion < gen);	
 	calculos(ren,col,func,individuos_decimal,acum,individuos_binario);
 	resul(individuos_decimal,func);
-	marcas_finales(nombre, ultimo_cambio, global);
+	
+	float outage = 1.0;
+	marcas_finales(nombre, ultimo_cambio, global, outage, global, usuarios_secundarios);
 }
 
 

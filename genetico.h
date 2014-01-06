@@ -12,7 +12,7 @@
 #define ind 30
 
 // Numero de generaciones que evaluará el algoritmo genético
-#define gen 500
+#define gen 20
 
 // El problema nos limita a maximo 10 usuarios primarios
 #define usuarios_primarios 10
@@ -35,7 +35,10 @@ float global = 0.0;
 int ultimo_cambio = 0;
 
 // Salto de marca. A cada cuantas interacciones debe guardar en el archivo de salida
-int salto_marca = 20;
+int salto_marca = 1;
+
+// Variables para el calculo del outage
+int valida = 0, invalida = 0;
 
 // Guardamos el total de las interacciones
 float sinr_max = umbral_sinr;

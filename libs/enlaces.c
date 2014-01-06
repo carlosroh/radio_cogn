@@ -407,8 +407,8 @@ void marcas(char *nombre, int iteraciones, int global, bool *estados_su, float m
             printf("\n\n ** Vector del SIR de enlaces primarios (dB)**\n");
   
   for(i = 0; i < pu_total; i++){
-              printf("%f, ", watt_a_dB(sinr_pu[i]));
-    fprintf(archivo, "%f, ", sinr_pu[i]);
+              printf("%d:%f, ", i, watt_a_dB(sinr_pu[i]));
+    fprintf(archivo, "%d:%f, ", i, sinr_pu[i]);
   }
 
 
@@ -416,28 +416,36 @@ void marcas(char *nombre, int iteraciones, int global, bool *estados_su, float m
             printf("\n\n ** Vector del SIR de enlaces secundarios (dB)**\n");
             
   for(i = 0; i < su_total; i++){
-              printf("%f, ", watt_a_dB(sinr_su[i]));
-    fprintf(archivo, "%f, ", sinr_su[i]);
+              printf("%d:%f, ", i, watt_a_dB(sinr_su[i]));
+    fprintf(archivo, "%d:%f, ", i, sinr_su[i]);
   }
 
   // R PARA MARCAR LA ITERACCION, FITNESS EN ESA ITERACION
-  fprintf(archivo, "\n\nR %d, %d\n\n\n", iteraciones, fitness);
-            printf("\n\nR %d, %d\n\n\n", iteraciones, fitness);
+  fprintf(archivo, "\n\nR %d, %f\n\n\n", iteraciones, fitness);
+            printf("\n\nR %d, %f\n\n\n", iteraciones, fitness);
   fclose(archivo);
 }
 
-void marcas_finales(char *nombre, int ultimo_cambio, float global){
+void marcas_finales(char *nombre, int ultimo_cambio, float global, float outage, float fitness, int su_total){
   FILE *archivo;
   archivo = fopen(nombre, "a+");
   
   // IT MARCA ITERACION EN QUE YA NO HUBO CAMBIO DE LA SOLUCION, FITNESS
-  fprintf(archivo, "IT %d, %f\n", ultimo_cambio, global);
+  fprintf(archivo, "\n\nIT %d, %f\n", ultimo_cambio, global);
   
   //OUTAGE MARCA LA RELACION ENTRE SOLUCIONES VALIDAS/SOLUCIONES NO VALIDAS
-  fprintf(archivo, "OUTAGE\n");
+  fprintf(archivo, "OUTAGE %f\n", outage);
   
   // RR PARA MARCAR RESULTADO DE LA CORRIDA* FITNESS*ENLACES SECUNDARIOS SELECCIONADOS* TOTAL DE ENLACES SECUNDARIOS SELECCIONADOS* RELACION SEÑAL A INTERFERENCIA DE SECUNDARIOS* RELACION SEÑAL A INTERFERENCIA DE PRIMARIOS* ASIGNACION DE CANALES PARA ENLACES SECUNDARIOS* TIEMPO DE EJECUCION DE LA CORRIDA EN MILISEGUNDOS (PUEDES MANEJARLA EN SEGUNDOS)
-  fprintf(archivo, "RR\n");
+  fprintf(archivo, "RR %f, *", fitness);
+  
+  // imprime la lista de enlaces secundarios seleccionados
+  int i;
+  for(i = 0; i < su_total; i++){
+  }
+  
+  fprintf(archivo, " %d, *", su_total);
+  
   fclose(archivo);
 }
 
